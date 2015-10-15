@@ -1,25 +1,25 @@
 package velociraptor;
 
-import java.awt.Point;
-
 public class Predator {
-	Double maxSpeed;
-	Double xPos;
-	Double yPos;
-	//assume facing the direction of <x,y> vector.
-	Double xVel;
-	Double yVel;
-	Double distanceThreshold; //minimum distance, regardless of detection, will start sprinting.
-	Double turnRadius;
+	public Double maxSpeed;
+	public Double xPos;
+	public Double yPos;
+	// assume facing the direction of <x,y> vector.
+	public Double xVel;
+	public Double yVel;
+	public Double distanceThreshold; // minimum distance, regardless of
+										// detection, will start sprinting.
+	public Double turnRadius;
+	public Double maxSpeedTimeLimit;
 
-	public Predator(Double xPosition, Double yPosition, Double xVel, Double yVel, Double maxSpeed, Double distanceThreshold, Double turnRadius){
+	public Predator(Double xPosition, Double yPosition, Double maxSpeed, Double maxSpeedTimeLimit,
+			Double distanceThreshold, Double turnRadius) {
 		this.maxSpeed = maxSpeed;
 		this.yPos = yPosition;
 		this.xPos = xPosition;
-		this.xVel = xVel;
-		this.yVel = yVel;
+		this.maxSpeedTimeLimit = maxSpeedTimeLimit;
 		this.turnRadius = turnRadius;
 		this.distanceThreshold = distanceThreshold;
 	}
-	
+
 }
