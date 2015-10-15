@@ -20,4 +20,8 @@ public class Prey {
 		this.autoDetectionDistance = autoDetectionDistance;
 	}
 	
+	public void move(Predator predator){
+		
+	}
+	
 }

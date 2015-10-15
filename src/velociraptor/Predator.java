@@ -21,5 +21,9 @@ public class Predator {
 		this.turnRadius = turnRadius;
 		this.distanceThreshold = distanceThreshold;
 	}
+	
+	public void move(Prey Prey){
+		
+	}
 
 }
