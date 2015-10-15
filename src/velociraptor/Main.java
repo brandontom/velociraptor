@@ -11,7 +11,7 @@ public class Main {
 	public static void main(String[] args) {
 		//Calculate starting xposition and yposition based on distance thresholds.
 		Double distanceThresholdPrey = 15.0;
-		Double distanceThresholdPredator = 20.0; // TODO get threshold when predator should start sprinting.
+		Double distanceThresholdPredator = 20.0; // TODO get threshold when predator should start sprinting. for use in calculation of initial positions.
 		calculateStartingPositions(distanceThresholdPredator, distanceThresholdPrey);
 		
 		
@@ -34,6 +34,7 @@ public class Main {
 	}
 
 	private static void calculateStartingPositions(Double distanceThresholdPredator, Double distanceThresholdPrey) {
+		//TODO actually calculate starting positions of predator and prey.
 		startXPositionPredator = 25.0;
 		startYPositionPredator = 25.0;
 		startXPositionPrey = 75.0;

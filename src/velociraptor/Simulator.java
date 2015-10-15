@@ -12,7 +12,6 @@ public class Simulator {
 	}
 
 	public Result simulate() {
-		// TODO simulate the actual scenario.
 		while(!chaseIsOver()){
 			prey.move(predator);
 			predator.move(prey);

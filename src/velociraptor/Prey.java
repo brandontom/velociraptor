@@ -21,7 +21,7 @@ public class Prey {
 	}
 	
 	public void move(Predator predator){
-		
+		//TODO
 	}
 	
 }

@@ -23,7 +23,7 @@ public class Predator {
 	}
 	
 	public void move(Prey Prey){
-		
+		//TODO
 	}
 
 }
