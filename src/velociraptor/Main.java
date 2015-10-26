@@ -6,6 +6,7 @@ public class Main {
 
 	private static final int numSimulations = 1000;
 	private static final boolean showGraphic = false;
+	private static final int numPredators = 2;
 	static Double startXPositionPredator = 100.0;
 	static Double startYPositionPredator = 125.0;
 	static Double startXPositionPrey = 100.0;
@@ -17,7 +18,6 @@ public class Main {
 		//Calculate starting xposition and yposition based on distance thresholds.
 		Double distanceThresholdPrey = 15.0;
 		Double distanceThresholdPredator = 20.0; // TODO get threshold when predator should start sprinting. for use in calculation of initial positions.
-		calculateStartingPositions(distanceThresholdPredator, distanceThresholdPrey);
 
 
 		Double maxSpeedPredator = 16.67; // meters per second
@@ -29,17 +29,16 @@ public class Main {
 		Double turnRadiusPrey = 0.5; // meters
 
 		for(int i = 0; i < numSimulations; i++){
-			Predator pred = new Predator(startXPositionPredator, startYPositionPredator, maxSpeedPredator,
-					maxSpeedTimeLimitPredator, distanceThresholdPredator, turnRadiusPredator);
 			Prey prey = new Prey(startXPositionPrey, startYPositionPrey, maxSpeedPrey, maxSpeedTimeLimitPrey,
 					distanceThresholdPrey, turnRadiusPrey);
 			
 			ArrayList<Predator> list = new ArrayList<Predator>();
-			list.add(pred);
-			calculateStartingPositions(distanceThresholdPredator, distanceThresholdPrey);
-			Predator pred2 = new Predator(startXPositionPredator, startYPositionPredator, maxSpeedPredator,
-					maxSpeedTimeLimitPredator, distanceThresholdPredator, turnRadiusPredator);
-			list.add(pred2);
+			for(int j = 0; j < numPredators; j++){
+				calculateStartingPositions(distanceThresholdPredator, distanceThresholdPrey);
+				Predator pred = new Predator(startXPositionPredator, startYPositionPredator, maxSpeedPredator,
+						maxSpeedTimeLimitPredator, distanceThresholdPredator, turnRadiusPredator);
+				list.add(pred);
+			}
 	
 			Simulator simulator = new Simulator(timeStep, list, prey, showGraphic);
 	
